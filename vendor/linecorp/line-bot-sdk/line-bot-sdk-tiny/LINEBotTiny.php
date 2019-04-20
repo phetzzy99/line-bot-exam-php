@@ -51,6 +51,9 @@ if (!function_exists('hash_equals')) {
     }
 }
 
+$channelAccessToken = 'wgWq9CMNJ5AsWmPgQMVSRaw7hK4yIwkiLWVDr/S+RH+MhUzS5Ygcye71iWRKGYNJdj08hq+1Bn9ckXzfDACsphDPJmdLSiONSmHa/VUDzoaytsA54IppqRhK0DgJJlrmqKKBAf4AiXlwOUEjQ947HQdB04t89/1O/w1cDnyilFU=';
+$channelSecret = '921ca4f853c7c6f1a1332b34502e5011';
+    
 class LINEBotTiny
 {
     public function __construct($channelAccessToken, $channelSecret)
