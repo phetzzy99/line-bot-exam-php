@@ -16,7 +16,7 @@
    $id = $arrayJson['events'][0]['source']['userId'];
 
     #ตัวอย่าง Message Type "Text"
-    if($message == "สวัสดี"){
+    if($message == "hi"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
