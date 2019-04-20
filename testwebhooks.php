@@ -68,6 +68,6 @@ function replyMsg($arrayHeader,$arrayPostData){
         $result = curl_exec($ch);
         curl_close ($ch);
     }
-   echo $message->getHTTPStatus();
+   echo $message->getHTTPStatus() . ' ' . $message->getRawBody();
    exit;
 ?>
