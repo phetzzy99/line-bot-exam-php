@@ -30,6 +30,28 @@
           pushMsg($arrayHeader,$arrayPostData);
        }
     }
+    else if($message == "button"){
+      switch ($message) {
+        case "button":
+          // code...
+          $action = array(
+            New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("button 1", "text 1"),
+            New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Google", "https://www.google.co.th"),
+            New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("next page", "page=3"),
+            New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Previous", "page=1")
+          );
+          $img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
+          $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("button text", "description", $img_url, $actions);
+          $outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("this message to use the phone to look to the Oh", $button);
+          break;
+
+        default:
+          // code...
+          $outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("demo command: text, location, button, confirm to test message template");
+          break;
+      }
+      replyMsg($arrayHeader,$outputText);
+    }
     #ตัวอย่าง Message Type "Sticker"
     else if($message == "ฝันดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
